@@ -26,6 +26,11 @@ _Syntax in the same order_
 
 >python manage.py runserver
 
+## Admin username and password
+username: mohammed
+
+password : 12345
+
 
 ## Second, you enter the information of Six objects:
 - *Room*: which is classrooms and their capacity.
