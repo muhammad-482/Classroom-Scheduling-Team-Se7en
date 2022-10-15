@@ -27,6 +27,7 @@ _Syntax in the same order_
 >python manage.py runserver
 
 ## Admin username and password
+homepage :http://127.0.0.1:8000/admin/
 username: mohammed
 
 password : 12345
