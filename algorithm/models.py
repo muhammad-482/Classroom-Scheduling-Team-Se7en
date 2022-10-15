@@ -17,6 +17,9 @@ class Profile(models.Model):
     def __str__(self):
         return f'Profile for user {self.user.username}'
 
+    class Meta:
+        db_table = "profile"
+
         
 time_slots = (
     ('9:30 - 10:30', '9:30 - 10:30'),
@@ -50,6 +53,9 @@ class Room(models.Model):
     def __str__(self):
         return self.r_number
 
+    class Meta:
+        db_table = "room"
+
 
 class Instructor(models.Model):
     uid = models.CharField(max_length=6)
@@ -57,6 +63,9 @@ class Instructor(models.Model):
 
     def __str__(self):
         return f'{self.uid} {self.name}'
+
+    class Meta:
+        db_table = "instructor"
 
 
 class MeetingTime(models.Model):
@@ -67,6 +76,9 @@ class MeetingTime(models.Model):
     def __str__(self):
         return f'{self.pid} {self.day} {self.time}'
 
+    class Meta:
+        db_table = "MeetingTime"
+
 
 class Course(models.Model):
     course_number = models.CharField(max_length=5, primary_key=True)
@@ -76,6 +88,9 @@ class Course(models.Model):
 
     def __str__(self):
         return f'{self.course_number} {self.course_name}'
+
+    class Meta:
+        db_table = "Course"
 
 
 class Department(models.Model):
@@ -88,6 +103,9 @@ class Department(models.Model):
 
     def __str__(self):
         return self.dept_name
+
+    class Meta:
+        db_table = "Department"
 
 
 class Section(models.Model):
@@ -113,3 +131,6 @@ class Section(models.Model):
         section = Section.objects.get(pk=self.section_id)
         section.instructor = instructor
         section.save()
+
+    class Meta:
+        db_table = "Section"
